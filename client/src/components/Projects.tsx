@@ -26,9 +26,9 @@ export default function Projects() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Selected Projects
             </h2>
-            <div className="h-1 w-24 bg-blue-600 rounded-full"></div>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
-          <Button variant="primary" size="lg" icon href="#projects">
+          <Button variant="primary" size="lg" icon href="/projects">
             View All Projects
           </Button>
         </div>
@@ -38,7 +38,7 @@ export default function Projects() {
           {PROJECTS.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               {/* Project Image */}
               <div className="relative h-48 md:h-56 overflow-hidden bg-gray-200">
@@ -52,7 +52,7 @@ export default function Projects() {
               {/* Project Content */}
               <div className="p-6">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-secondary transition-colors">
                   {project.title}
                 </h3>
 
@@ -76,7 +76,7 @@ export default function Projects() {
                 {/* View Project Link */}
                 <a
                   href={project.link}
-                  className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all group/link"
+                  className="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-3 transition-all group/link"
                 >
                   View Project
                   <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />

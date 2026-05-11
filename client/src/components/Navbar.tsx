@@ -38,7 +38,7 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium"
+                className="text-gray-700 hover:text-primary transition-colors text-sm font-medium"
               >
                 {item.label}
               </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block text-gray-700 hover:text-blue-600 transition-colors py-2"
+                  className="block text-gray-700 hover:text-primary transition-colors py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

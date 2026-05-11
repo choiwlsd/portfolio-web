@@ -59,7 +59,7 @@ export interface Experience {
  * Social media link
  */
 export interface SocialLink {
-  platform: 'github' | 'linkedin' | 'twitter' | 'email' | 'instagram';
+  platform: 'github' | 'linkedin' | 'twitter' | 'email' | 'instagram' | 'blog';
   url: string;
   icon?: string;
 }

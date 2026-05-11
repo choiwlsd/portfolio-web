@@ -17,7 +17,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '#about' },
   { label: 'Projects', href: '/projects' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Journal', href: '#journal' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -26,8 +25,9 @@ export const NAV_ITEMS: NavItem[] = [
  */
 export const SOCIAL_LINKS: SocialLink[] = [
   { platform: 'github', url: 'https://github.com/choiwlsd', icon: 'Github' },
-  { platform: 'instagram', url: 'https://instagram.com', icon: 'Instagram' },
-  { platform: 'twitter', url: 'https://twitter.com', icon: 'Twitter' },
+  { platform: 'blog', url: 'https://oiblog.tistory.com/', icon: 'BookOpen' },
+  { platform: 'linkedin', url: 'https://linkedin.com/in/choiwlsd', icon: 'Linkedin' },
+  { platform: 'instagram', url: 'https://instagram.com/_oiwlsx', icon: 'Instagram' },
   { platform: 'email', url: 'mailto:choiwlsd@gmail.com', icon: 'Mail' },
 ];
 
@@ -214,7 +214,7 @@ export const EXPERIENCES: Experience[] = [
  */
 export const CONTACT_INFO = {
   email: 'choiwlsd@gmail.com',
-  phone: '+82 10-XXXX-XXXX',
+  phone: '+82 10-8265-XXXX',
   location: 'South Korea',
   blog: 'https://oiblog.tistory.com/',
 };

@@ -10,7 +10,7 @@
  * - Flexible layout (horizontal/vertical)
  */
 
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Instagram, BookOpen } from 'lucide-react';
 import { SOCIAL_LINKS } from '@/../../shared/const';
 
 interface SocialLinksProps {
@@ -25,7 +25,8 @@ const iconMap = {
   linkedin: Linkedin,
   twitter: Twitter,
   email: Mail,
-  instagram: Twitter, // Fallback
+  instagram: Instagram,
+  blog: BookOpen
 };
 
 export default function SocialLinks({ className = 'flex gap-4' }: SocialLinksProps) {
@@ -39,7 +40,7 @@ export default function SocialLinks({ className = 'flex gap-4' }: SocialLinksPro
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-blue-600 transition-colors p-2 hover:bg-gray-100 rounded-lg"
+            className="text-gray-600 hover:text-primary transition-colors p-2 hover:bg-gray-100 rounded-lg"
             aria-label={link.platform}
             title={link.platform}
           >

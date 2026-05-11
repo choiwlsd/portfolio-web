@@ -16,7 +16,7 @@ import Button from './Button';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-32 bg-blue-600 text-white relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 bg-secondary text-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -36,7 +36,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Information */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-y border-blue-400">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-y border-white">
             {/* Email */}
             <div className="flex flex-col items-center gap-3">
               <Mail size={32} className="text-blue-100" />

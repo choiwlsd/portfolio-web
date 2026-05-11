@@ -51,7 +51,7 @@ export default function Button({
 
   // Variant styles
   const variantStyles = {
-    primary: 'bg-blue-600 text-white hover:bg-black active:scale-95',
+    primary: 'bg-primary text-white hover:bg-black active:scale-95',
     secondary: 'bg-white text-gray-900 border-2 border-gray-200 hover:border-primary hover:text-primary',
     outline: 'bg-transparent text-gray-900 border-2 border-gray-300 hover:border-primary hover:text-primary',
   };

@@ -141,7 +141,7 @@ export default function ProjectsPage() {
                 {paginatedProjects.map(project => (
                   <div
                     key={project.id}
-                    className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
+                    className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                   >
                     {/* Project Image */}
                     <div className="relative h-48 overflow-hidden bg-gray-200">
@@ -156,13 +156,13 @@ export default function ProjectsPage() {
                     <div className="p-6">
                       {/* Category Badge */}
                       {project.category && (
-                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full mb-3 capitalize">
+                        <span className="inline-block px-3 py-1 bg-blue-100 text-primary text-xs font-bold rounded-full mb-3 capitalize">
                           {project.category.replace(/-/g, ' ')}
                         </span>
                       )}
 
                       {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
 
@@ -186,7 +186,7 @@ export default function ProjectsPage() {
                       {/* View Project Link */}
                       <a
                         href={project.link}
-                        className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all group/link"
+                        className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
                       >
                         View Project
                         <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
@@ -202,7 +202,7 @@ export default function ProjectsPage() {
                   <button
                     onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                     disabled={currentPage === 1}
-                    className="p-2 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="p-2 rounded-lg border border-gray-200 hover:border-primary hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
                     <ChevronLeft size={20} />
                   </button>
@@ -214,8 +214,8 @@ export default function ProjectsPage() {
                         onClick={() => setCurrentPage(page)}
                         className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
                           currentPage === page
-                            ? 'bg-blue-600 text-white'
-                            : 'border border-gray-200 text-gray-900 hover:border-blue-300'
+                            ? 'bg-primary text-white'
+                            : 'border border-gray-200 text-gray-900 hover:border-primary'
                         }`}
                       >
                         {page}
@@ -226,7 +226,7 @@ export default function ProjectsPage() {
                   <button
                     onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                     disabled={currentPage === totalPages}
-                    className="p-2 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="p-2 rounded-lg border border-gray-200 hover:border-primary hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
                     <ChevronRight size={20} />
                   </button>
