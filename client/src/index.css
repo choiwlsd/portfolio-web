@@ -74,8 +74,8 @@
   --muted: #E5E7EB;
   --muted-foreground: #6B7280;
   
-  /* Accent - Warm Orange for secondary emphasis */
-  --accent: #F59E0B;
+  /* Accent - for secondary emphasis */
+  --accent: #0bdaf5;
   --accent-foreground: #FFFFFF;
   
   /* Destructive */

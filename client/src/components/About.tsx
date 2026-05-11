@@ -10,16 +10,17 @@
  * Design: Two-column layout with cards and progress bars
  */
 
-import { Briefcase, Zap, BookOpen } from 'lucide-react';
+import { Briefcase, Zap, BookOpen, Trophy } from 'lucide-react';
 import { EXPERIENCES, SKILLS, TOOLS } from '@/../../shared/const';
 
 /**
  * Icon map for experience items
  */
 const iconMap: Record<string, React.ReactNode> = {
-  Briefcase: <Briefcase size={24} className="text-blue-600" />,
-  Zap: <Zap size={24} className="text-blue-600" />,
-  BookOpen: <BookOpen size={24} className="text-blue-600" />,
+  Briefcase: <Briefcase size={24} className="text-accent" />,
+  Zap: <Zap size={24} className="text-accent" />,
+  Trophy: <Trophy size={24} className="text-accent" />,
+  BookOpen: <BookOpen size={24} className="text-accent" />,
 };
 
 export default function About() {
@@ -31,7 +32,7 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             About me
           </h2>
-          <div className="h-1 w-24 bg-blue-600 rounded-full"></div>
+          <div className="h-1 w-24 bg-primary rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
@@ -47,7 +48,7 @@ export default function About() {
             <div className="space-y-4">
               {EXPERIENCES.map((exp, index) => (
                 <div key={index} className="flex gap-4 p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     {iconMap[exp.icon || 'Briefcase']}
                   </div>
                   <div>
@@ -74,7 +75,7 @@ export default function About() {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                       <div
-                        className="bg-blue-600 h-full rounded-full transition-all duration-500"
+                        className="bg-accent h-full rounded-full transition-all duration-500"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>

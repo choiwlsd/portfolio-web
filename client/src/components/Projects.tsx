@@ -52,7 +52,7 @@ export default function Projects() {
               {/* Project Content */}
               <div className="p-6">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-secondary transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-black-600 transition-colors">
                   {project.title}
                 </h3>
 
@@ -76,7 +76,7 @@ export default function Projects() {
                 {/* View Project Link */}
                 <a
                   href={project.link}
-                  className="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-3 transition-all group/link"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
                 >
                   View Project
                   <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />

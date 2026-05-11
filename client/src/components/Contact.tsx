@@ -16,7 +16,7 @@ import Button from './Button';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-32 bg-secondary text-white relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
