@@ -30,7 +30,7 @@ export default function About() {
         {/* Section Title */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            About me
+            Jinyeong Choi
           </h2>
           <div className="h-1 w-24 bg-primary rounded-full"></div>
         </div>
