@@ -35,17 +35,17 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS.map((project) => (
+          {PROJECTS.slice(0, 3).map((project) => (
             <div
               key={project.id}
               className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               {/* Project Image */}
-              <div className="relative h-48 md:h-56 overflow-hidden bg-gray-200">
+              <div className="relative h-60 overflow-hidden bg-gray-200">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
