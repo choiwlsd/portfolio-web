@@ -147,11 +147,11 @@ export default function ProjectsPage() {
                     onClick={() => setLocation(`/projects/${project.id}`)}
                   >
                     {/* Project Image */}
-                    <div className="relative h-48 overflow-hidden bg-gray-200">
+                    <div className="relative h-60 overflow-hidden bg-gray-200">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
 
@@ -159,7 +159,7 @@ export default function ProjectsPage() {
                     <div className="p-6">
                       {/* Category Badge */}
                       {project.category && (
-                        <span className="inline-block px-3 py-1 bg-blue-100 text-primary text-xs font-bold rounded-full mb-3 capitalize">
+                        <span className="inline-block px-3 py-1 border border-primary text-primary text-xs font-bold rounded-full mb-3 capitalize">
                           {project.category.replace(/-/g, ' ')}
                         </span>
                       )}

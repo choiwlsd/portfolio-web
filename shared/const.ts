@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     title: 'KHUTHON 2025 - Micro Fertilizer Trading Platform',
     description: '🏆KHUTHON 최우수상 수상작: 마이크로 비료 거래 플랫폼',
     shortDescription: 'Micro fertilizer trading platform',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
+    image: 'https://cdn.phototourl.com/free/2026-05-13-edd55c19-479e-498c-966e-645a5d4d33bc.png',
     gallery: [
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
     title: 'Semothon 2025 - Classroom Rental Platform',
     description: '🏆세모톤 대상 수상작: 강의실 대여 플랫폼',
     shortDescription: 'Classroom rental platform',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
+    image: 'https://cdn.phototourl.com/free/2026-05-13-1843cd55-a60c-47bd-ba6b-435c426a1246.png',
     gallery: [
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
