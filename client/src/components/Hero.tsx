@@ -25,7 +25,11 @@ export default function Hero() {
           <div className="space-y-6 md:space-y-8">
             {/* Greeting */}
             <div className="inline-block">
-              <p className="text-primary font-semibold text-lg">{PORTFOLIO_META.name}</p>
+              <p className="text-primary font-semibold text-lg">
+                <span className='text-2xl leading-none tracking-wide text-gray-900 antialiased'>
+                  {PORTFOLIO_META.name}
+                </span>
+              </p>
             </div>
 
             {/* Main Headline */}

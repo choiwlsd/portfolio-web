@@ -21,6 +21,7 @@ import Footer from '@/components/Footer';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
 
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
