@@ -10,6 +10,7 @@
  */
 
 import { useState, useMemo } from 'react';
+import { useLocation } from 'wouter';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PROJECTS } from '@/../../shared/const';
 import type { Project } from '@/../../shared/types';
@@ -24,6 +25,7 @@ export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [, setLocation] = useLocation();
 
   // Get unique categories and technologies
   const categories = useMemo(() => {
@@ -142,6 +144,7 @@ export default function ProjectsPage() {
                   <div
                     key={project.id}
                     className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                    onClick={() => setLocation(`/projects/${project.id}`)}
                   >
                     {/* Project Image */}
                     <div className="relative h-48 overflow-hidden bg-gray-200">

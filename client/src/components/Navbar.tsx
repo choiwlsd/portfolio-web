@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo/Brand */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <a href="/" className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Poppins' }}>
               dev.
             </a>

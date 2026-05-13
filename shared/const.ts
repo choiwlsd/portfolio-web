@@ -14,7 +14,7 @@ import type { NavItem, Project, Skill, Tool, Experience, SocialLink } from './ty
  */
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '#about' },
+  { label: 'About', href: '/about' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '#contact' },
 ];
