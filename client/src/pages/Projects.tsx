@@ -69,72 +69,15 @@ export default function ProjectsPage() {
         <div className="container">
           {/* Page Header */}
           <div className="mb-16">
-            <p className="text-blue-600 font-semibold text-lg mb-2">My Work</p>
+            <p className="text-primary font-semibold text-lg mb-2">My Work</p>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-              All Projects<span className="text-blue-600">.</span>
+              All Projects<span className="text-primary">.</span>
             </h1>
             <p className="text-xl text-gray-600 italic mb-4">Ideas. Code. Design. Results.</p>
-            <div className="h-1 w-24 bg-blue-600 rounded-full"></div>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-            {/* Sidebar - Filters */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-32 space-y-8">
-                {/* Category Filter */}
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase">Filter</h3>
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => handleFilterChange(() => setSelectedCategory(null))}
-                      className={`block text-sm font-medium transition-colors ${
-                        !selectedCategory
-                          ? 'text-blue-600'
-                          : 'text-gray-600 hover:text-gray-900'
-                      }`}
-                    >
-                      All Projects <span className="text-gray-400">({PROJECTS.length})</span>
-                    </button>
-                    {(categories as string[]).map((cat: string) => {
-                      const count = PROJECTS.filter(p => p.category === cat).length;
-                      return (
-                        <button
-                          key={cat}
-                          onClick={() => handleFilterChange(() => setSelectedCategory(cat))}
-                          className={`block text-sm font-medium transition-colors capitalize ${
-                            selectedCategory === cat
-                              ? 'text-blue-600'
-                              : 'text-gray-600 hover:text-gray-900'
-                          }`}
-                        >
-                          {cat?.replace(/-/g, ' ')} <span className="text-gray-400">({count})</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Technology Filter */}
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase">Technology</h3>
-                  <div className="space-y-2">
-                    {technologies.map(tech => (
-                      <button
-                        key={tech}
-                        onClick={() => handleFilterChange(() => setSelectedTech(tech))}
-                        className={`block text-sm font-medium transition-colors ${
-                          selectedTech === tech
-                            ? 'text-blue-600'
-                            : 'text-gray-600 hover:text-gray-900'
-                        }`}
-                      >
-                        {tech}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Main Content - Projects Grid */}
             <div className="lg:col-span-3">
@@ -235,6 +178,64 @@ export default function ProjectsPage() {
                   </button>
                 </div>
               )}
+            </div>
+
+            {/* Sidebar - Filters */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-32 space-y-8">
+                {/* Category Filter */}
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase">Filter</h3>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => handleFilterChange(() => setSelectedCategory(null))}
+                      className={`block text-sm font-medium transition-colors ${
+                        !selectedCategory
+                          ? 'text-primary'
+                          : 'text-gray-600 hover:text-gray-900'
+                      }`}
+                    >
+                      All Projects <span className="text-gray-400">({PROJECTS.length})</span>
+                    </button>
+                    {(categories as string[]).map((cat: string) => {
+                      const count = PROJECTS.filter(p => p.category === cat).length;
+                      return (
+                        <button
+                          key={cat}
+                          onClick={() => handleFilterChange(() => setSelectedCategory(cat))}
+                          className={`block text-sm font-medium transition-colors capitalize ${
+                            selectedCategory === cat
+                              ? 'text-blue-600'
+                              : 'text-gray-600 hover:text-gray-900'
+                          }`}
+                        >
+                          {cat?.replace(/-/g, ' ')} <span className="text-gray-400">({count})</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Technology Filter */}
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase">Technology</h3>
+                  <div className="space-y-2">
+                    {technologies.map(tech => (
+                      <button
+                        key={tech}
+                        onClick={() => handleFilterChange(() => setSelectedTech(tech))}
+                        className={`block text-sm font-medium transition-colors ${
+                          selectedTech === tech
+                            ? 'text-blue-600'
+                            : 'text-gray-600 hover:text-gray-900'
+                        }`}
+                      >
+                        {tech}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

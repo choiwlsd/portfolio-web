@@ -15,6 +15,7 @@
 import { ArrowRight } from 'lucide-react';
 import { PROJECTS } from '@/../../shared/const';
 import Button from './Button';
+import { navigate } from 'wouter/use-browser-location';
 
 export default function Projects() {
   return (
@@ -36,8 +37,9 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.slice(0, 3).map((project) => (
-            <div
+            <a
               key={project.id}
+              href={project.link}
               className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               {/* Project Image */}
@@ -82,7 +84,7 @@ export default function Projects() {
                   <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

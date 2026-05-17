@@ -15,6 +15,8 @@
 
 import Button from './Button';
 import { PORTFOLIO_META } from '@/../../shared/const';
+import OIimage from '../assets/favicon.png';
+import Baguetteimage from '../assets/baguette.png';
 
 export default function Hero() {
   return (
@@ -78,10 +80,13 @@ export default function Hero() {
             {/* Decorative Elements */}
             <div className="absolute inset-0 flex items-center justify-center">
               {/* Large Circle Background */}
-              <div className="absolute w-72 h-72 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
+              <div className="absolute w-72 h-72 bg-red-500 rounded-full opacity-20 blur-3xl z-0"></div>
+
+              <img src={OIimage} alt="Decorative" className="w-60 h-60 mb-4 z-10" />
+              <img src={Baguetteimage} alt="Decorative" className="w-80 h-80 mb-4 z-10" />
 
               {/* Floating Box with Code */}
-              <div className="relative z-10 bg-gray-900 text-white p-6 rounded-lg shadow-lg transform -rotate-6 max-w-xs">
+              {/* <div className="relative z-10 bg-gray-900 text-white p-6 rounded-lg shadow-lg transform -rotate-6 max-w-xs">
                 <code className="text-sm font-mono">
                   <div>const developer = {'{'}</div>
                   <div className="ml-4">name: 'Dev Developer',</div>
@@ -90,10 +95,9 @@ export default function Hero() {
                   <div className="ml-4">things for the web'</div>
                   <div>{'}'}</div>
                 </code>
-              </div>
+              </div> */}
 
               {/* Decorative Shapes */}
-              <div className="absolute top-0 right-0 w-40 h-40 border-4 border-primary  opacity-30"></div>
               <div className="absolute bottom-10 left-0 w-25 h-25 bg-linear-to-r from-primary to-secondary rounded-full opacity-20"></div>
             </div>
           </div>
