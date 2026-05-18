@@ -12,15 +12,15 @@ import AboutPage from "./pages/About";
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/about"} component={AboutPage} />
-      <Route path={"/projects"} component={ProjectsPage} />
-      <Route path={"/projects/:id"} component={ProjectDetail} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+        <Switch>
+          <Route path={"/"} component={Home} />
+          <Route path={"/about"} component={AboutPage} />
+          <Route path={"/projects"} component={ProjectsPage} />
+          <Route path={"/projects/:id"} component={ProjectDetail} />
+          <Route path={"/404"} component={NotFound} />
+          {/* Final fallback route */}
+          <Route component={NotFound} />
+        </Switch>
   );
 }
 

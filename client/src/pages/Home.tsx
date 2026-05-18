@@ -20,25 +20,30 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
-import Strawberryimage from '../assets/strawberry.png';
 
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-#fafaf8 text-black overflow-scroll">
+      {/* grid */}
+      <div
+        className="
+          fixed inset-0 -z-10
+          bg-[linear-gradient(to_right,#dcdcdc_1px,transparent_1px),linear-gradient(to_bottom,#dcdcdc_1px,transparent_1px)]
+          bg-size-[72px_72px]
+          opacity-60
+        "
+      />
+      
       {/* Fixed Navigation */}
       <Navbar />
 
-      <img 
-            src={Strawberryimage} 
-            alt="Decorative" 
-            className="absolute w-50 h-60 top-250 right-10 z-20" />
-
       {/* Main Content */}
       <main className="pt-16 md:pt-20">
+
         {/* Hero Section */}
         <Hero />
-
+        
         {/* About Section */}
         <About />
 
@@ -46,7 +51,7 @@ const Home = () => {
         <Projects />
 
         {/* Contact Section */}
-        <Contact />
+        {/* <Contact />  */}
       </main>
 
       {/* Footer */}

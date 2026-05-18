@@ -29,6 +29,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { platform: 'email', url: 'mailto:choiwlsd@gmail.com', icon: 'Mail' },
 ];
 
+import blueBG from '../client/src/assets/background/blue-none-bg.png';
+import pinkBG from '../client/src/assets/background/pink-none-bg.png';
 /**
  * Featured projects with detailed information
  */
@@ -38,10 +40,10 @@ export const PROJECTS: Project[] = [
     title: 'Pose-Agent',
     description: '[캡스톤디자인] 자율협력지원 Agentic AI: 협주 가능 악기 레슨 Agent AI 플랫폼 기술 개발',
     shortDescription: '협주가능 악기 레슨 Agent AI 플랫폼',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
+    image: blueBG,
     gallery: [
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
+      blueBG,
+      pinkBG
     ],
     tags: ['Python', 'MediaPipe', 'AI'],
     link: '/projects/1',

@@ -15,105 +15,149 @@
 
 import Button from './Button';
 import { PORTFOLIO_META } from '@/../../shared/const';
-import OIimage from '../assets/favicon.png';
-import Baguetteimage from '../assets/baguette.png';
-import Barcodeimage from '../assets/barcode.png';
-import Basketimage from '../assets/basket.png';
-import Pastaimage from '../assets/pasta.png';
+import FloatingBadge from './ui/floating-bagde';
+import FloatingIcon from './ui/floating-icon';
+import { Camera, Film, Headphones, Clapperboard, Play } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 md:space-y-8">
-            {/* Greeting */}
-            <div className="inline-block">
-              <p className="text-primary font-semibold text-lg">
-                <span className='text-2xl leading-none tracking-wide text-gray-900 antialiased'>
-                  {PORTFOLIO_META.name}
-                </span>
-              </p>
-            </div>
+    <section className="overflow-x-auto overflow-y-hidden">
+      <div
+        className="
+          relative
+          w-[1440px]
+          mx-auto
+          min-h-[820px]
+          px-8
+          pt-6
+        ">
+          {/* intro */}
+        <div className="absolute left-8 top-14 max-w-[230px]">
+          <p className="text-[#2f6dff] font-medium italic text-base mb-3">
+            Welcome to my Portfolio!
+          </p>
 
-            {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-                I build 
-                <span className="relative inline-block border-4 border-primary px-4 py-1 ml-2 font-serif">digital</span>
-                experiences
-              </h1>
+          <p className="text-[30px] leading-[1.2] font-light">
+            I&apos;m <span className="font-bold underline">Monelo</span>, a
+            Designer and Content Creator based in{" "}
+            <span className="font-bold underline">Seoul.</span>
+          </p>
+        </div>
 
-              {/* Decorative Underline */}
-              <div className="flex items-center gap-3">
-                <div className="h-1 w-16 bg-primary rounded-full"></div>
-                <span className="text-2xl font-bold text-gray-900">*</span>
+        {/* main title */}
+        <div className="flex flex-col items-center justify-center pt-12 select-none">
+          <div className="relative">
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2">
+              <div className="w-20 h-20 rounded-[24px] bg-black shadow-2xl rotate-6 flex items-center justify-center">
+                <Play
+                  fill="#2f6dff"
+                  color="#2f6dff"
+                  size={32}
+                  className="translate-x-1"
+                />
               </div>
             </div>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              {PORTFOLIO_META.subtitle}
-            </p>
-
-            {/* Description */}
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-lg">
-              {PORTFOLIO_META.bio}
-            </p>
-
-            {/* Role Badge */}
-            <div className="inline-block">
-              <span className="text-primary font-semibold">{PORTFOLIO_META.title}</span>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="primary" size="lg" icon href="#projects" className='bg-primary'>
-                {PORTFOLIO_META.cta.primary}
-              </Button>
-              <Button variant="secondary" size="lg" icon href="#contact">
-                {PORTFOLIO_META.cta.secondary}
-              </Button>
-            </div>
+            <h1 className="text-[120px] leading-[0.92] font-black tracking-[-0.08em] text-center">
+              Shoot.
+              <br />
+              Edit.
+              <br />
+              Deliver.
+              <br />
+              Repeat.
+            </h1>
           </div>
+        </div>
 
-          {/* Right Decorative Area */}
-          <div className="hidden md:flex items-center justify-center relative h-96">
-            {/* Decorative Elements */}
-              <div className="relative w-125 h-125">
-              {/* Large Circle Background */}
-              <div className="absolute w-72 h-72 bg-red-500 rounded-full opacity-20 blur-3xl z-0"></div>
+        {/* floating badges */}
+        <FloatingBadge
+          className="left-[18%] top-[29%] rotate-6"
+          text="Studio & On-Location Shoots"
+        />
 
-              <img 
-                src={Baguetteimage} 
-                alt="Decorative" 
-                className="absolute w-80 h-80 bottom-80 z-20" />
-              <img 
-                src={Barcodeimage} 
-                alt="Decorative" 
-                className="absolute w-40 h-40 bottom-40 left-20 rotate-50 z-20" />
-              <img 
-                src={Basketimage} 
-                alt="Decorative" 
-                className="absolute w-100 h-70 mb-4 rotate-90 z-10" />
-              <img 
-                src={Pastaimage} 
-                alt="Decorative" 
-                className="absolute w-60 h-40 top-10 right-20 z-20" />
+        <FloatingBadge
+          className="right-[24%] top-[44%] -rotate-3"
+          text="Post - Production"
+        />
 
+        <FloatingBadge
+          className="left-[22%] top-[58%] rotate-3"
+          text="High - Quality Production"
+        />
+
+        <FloatingBadge
+          className="left-[47%] top-[73%] rotate-2"
+          text="Reel Shoots"
+        />
+
+        {/* icons */}
+        <div className="absolute left-[13%] top-[40%]">
+          <FloatingIcon>
+            <Headphones size={45} strokeWidth={1.7} />
+          </FloatingIcon>
+        </div>
+
+        <div className="absolute left-[18%] top-[67%]">
+          <FloatingIcon>
+            <Camera size={48} strokeWidth={1.7} />
+          </FloatingIcon>
+        </div>
+
+        <div className="absolute right-[18%] top-[48%]">
+          <FloatingIcon>
+            <Film size={45} strokeWidth={1.7} />
+          </FloatingIcon>
+        </div>
+
+        <div className="absolute right-[22%] top-[75%]">
+          <FloatingIcon>
+            <Clapperboard size={42} strokeWidth={1.7} />
+          </FloatingIcon>
+        </div>
+
+        {/* polaroid */}
+        <div className="absolute right-[7%] top-[18%] rotate-[7deg]">
+          <div className="bg-white p-3 shadow-2xl border border-neutral-200 w-[220px]">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+              className="w-full h-62.5 object-cover"
+            />
+
+            <div className="mt-3 flex justify-end">
+              <span className="bg-yellow-300 px-3 py-1 text-xs font-semibold rotate-[-2deg]">
+                monelo
+              </span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center gap-2">
-          <p className="text-sm text-gray-600">Scroll to explore</p>
-          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        {/* sticky note */}
+        <div className="absolute right-[5%] bottom-[12%] rotate-[-5deg]">
+          <div className="bg-[#f2e8d8] p-5 shadow-lg w-55">
+            <div className="absolute top-[-10px] left-10 w-24 h-6 bg-[#d6b78d]/70 rotate-[-2deg]" />
+
+            <ul className="space-y-2 text-base font-medium text-neutral-700">
+              <li>— Graphic Design</li>
+              <li>— Photography</li>
+              <li>— Videography</li>
+              <li>— Branding</li>
+              <li>— Content Creation</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* handwriting */}
+        <div className="absolute left-[4%] bottom-[21%] rotate-[-6deg]">
+          <p className="text-2xl leading-snug font-light italic">
+            Ready to make your
+            <br />
+            Brands Unforgettable
+          </p>
+
+          <button className="mt-5 border-[3px] border-[#2f6dff] text-[#2f6dff] px-6 py-2 rounded-full text-2xl font-semibold italic hover:bg-[#2f6dff] hover:text-white transition">
+            Let&apos;s Roll!
+          </button>
         </div>
       </div>
     </section>

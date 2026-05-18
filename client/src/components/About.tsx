@@ -1,107 +1,124 @@
 /**
  * About Section Component
- * 
- * Displays:
- * - About me introduction
- * - Experience/qualifications with icons
- * - Skills with proficiency bars
- * - Tools/technologies grid
- * 
- * Design: Two-column layout with cards and progress bars
+ *
+ * - 기존 About 로직 유지
+ * - 새 editorial portfolio 디자인 적용
+ * - EXPERIENCE / SKILLS / TOOLS 제거된 상태 기준
  */
 
-import { Briefcase, Zap, BookOpen, Trophy } from 'lucide-react';
-import { EXPERIENCES, SKILLS, TOOLS } from '@/../../shared/const';
-
-/**
- * Icon map for experience items
- */
-const iconMap: Record<string, React.ReactNode> = {
-  Briefcase: <Briefcase size={24} className="text-accent" />,
-  Zap: <Zap size={24} className="text-accent" />,
-  Trophy: <Trophy size={24} className="text-accent" />,
-  BookOpen: <BookOpen size={24} className="text-accent" />,
-};
+import { ArrowUpRight } from "lucide-react";
+import { navigate } from "wouter/use-browser-location";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-gray-50">
-      <div className="container">
-        {/* Section Title */}
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Jinyeong Choi
-          </h2>
-          <div className="h-1 w-24 bg-primary rounded-full"></div>
-        </div>
+    <section
+      id="about"
+      className="
+        max-w-[1500px]
+        mx-auto
+        px-8
+        py-24
+      "
+    >
+      <div className="grid lg:grid-cols-2 gap-14 items-center">
+        {/* image */}
+        <div className="relative">
+          {/* tape */}
+          <div
+            className="
+              absolute
+              -top-4
+              right-8
+              w-16
+              h-6
+              bg-[#5f8fff]
+              rotate-[25deg]
+              z-10
+            "
+          />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          {/* Left Column - Introduction & Experience */}
-          <div className="space-y-8">
-            {/* Bio */}
-            <p className="text-lg text-gray-700 leading-relaxed">
-              I'm a Front-End Developer who loves turning ideas into clean, user-friendly web experiences. 
-              I enjoy crafting interfaces that are not only functional but also delightful.
-            </p>
-
-            {/* Experience Cards */}
-            <div className="space-y-4">
-              {EXPERIENCES.map((exp, index) => (
-                <div key={index} className="flex gap-4 p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
-                  <div className="shrink-0">
-                    {iconMap[exp.icon || 'Briefcase']}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{exp.title}</h4>
-                    <p className="text-sm text-gray-600">{exp.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column - Skills */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">SKILLS →</h3>
-
-              {/* Skill Bars */}
-              <div className="space-y-6">
-                {SKILLS.map((skill, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-semibold text-gray-900">{skill.name}</span>
-                      <span className="text-sm text-gray-600">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                      <div
-                        className="bg-accent h-full rounded-full transition-all duration-500"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* polaroid */}
+          <div
+            className="
+              bg-white
+              p-4
+              rotate-[-3deg]
+              shadow-[0_25px_60px_rgba(0,0,0,0.12)]
+            "
+          >
+            <img
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop"
+              alt="Jinyeong Choi"
+              className="
+                w-full
+                h-[420px]
+                object-cover
+              "
+            />
           </div>
         </div>
 
-        {/* Tools Section */}
+        {/* text */}
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">TOOLS I USE</h3>
+          {/* small label */}
+          <p className="text-[#2f6dff] italic text-lg mb-4">
+            About Me
+          </p>
 
-          {/* Tools Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {TOOLS.map((tool, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
-              >
-                <div className="text-3xl font-bold text-gray-900 mb-2">{tool.name.split('').slice(0, 1).join('')}</div>
-                <p className="text-sm font-medium text-gray-700 text-center">{tool.name}</p>
-              </div>
-            ))}
-          </div>
+          {/* title */}
+          <h2
+            className="
+              text-[52px]
+              leading-[1.05]
+              font-black
+              tracking-tight
+            "
+          >
+            <span className="relative inline-block border-4 border-primary px-4 py-1 ml-2 font-serif mr-2">Jinyeong</span>
+            Choi
+
+          </h2>
+
+          {/* bio */}
+          <p
+            className="
+              mt-8
+              text-neutral-600
+              text-lg
+              leading-relaxed
+              max-w-[650px]
+            "
+          >
+            I&apos;m a Front-End Developer who loves
+            turning ideas into clean, user-friendly
+            web experiences.
+            <br />
+            <br />
+            I enjoy crafting interfaces that are not
+            only functional but also delightful.
+          </p>
+
+          {/* button */}
+          <button
+            className="
+              mt-10
+              bg-black
+              text-white
+              px-7
+              py-4
+              rounded-xl
+              flex
+              items-center
+              gap-3
+              font-semibold
+              hover:scale-105
+              transition
+            "
+            onClick = {() => navigate('/about')}
+          >
+            MORE ABOUT ME
+            <ArrowUpRight size={18} />
+          </button>
         </div>
       </div>
     </section>
