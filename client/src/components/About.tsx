@@ -8,6 +8,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { navigate } from "wouter/use-browser-location";
+import Milanimage from "@/assets/milan.jpg";
 
 export default function About() {
   return (
@@ -47,7 +48,7 @@ export default function About() {
             "
           >
             <img
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop"
+              src={Milanimage}
               alt="Jinyeong Choi"
               className="
                 w-full
