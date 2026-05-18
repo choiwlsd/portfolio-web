@@ -66,8 +66,8 @@ export const PROJECTS: Project[] = [
     shortDescription: 'Micro fertilizer trading platform',
     image: 'https://cdn.phototourl.com/free/2026-05-13-edd55c19-479e-498c-966e-645a5d4d33bc.png',
     gallery: [
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
+      blueBG,
+      pinkBG
     ],
     tags: ['JavaScript', 'React', 'Node.js'],
     link: '/projects/2',
@@ -90,8 +90,8 @@ export const PROJECTS: Project[] = [
     shortDescription: 'Classroom rental platform',
     image: 'https://cdn.phototourl.com/free/2026-05-13-1843cd55-a60c-47bd-ba6b-435c426a1246.png',
     gallery: [
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
+      blueBG,
+      pinkBG
     ],
     tags: ['JavaScript', 'React', 'TypeScript'],
     link: '/projects/3',
@@ -112,7 +112,11 @@ export const PROJECTS: Project[] = [
     title: 'KHUTHON 2024 - Personal Power Monitoring System',
     description: '🏆KHUTHON 우수상/인기상 수상작: 개인화된 전력 모니터링 시스템',
     shortDescription: 'Personal power monitoring system',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
+    image: blueBG,
+    gallery: [
+      blueBG,
+      pinkBG
+    ],    
     tags: ['JavaScript', 'React', 'IoT'],
     link: '/projects/4',
     featured: false,
@@ -130,7 +134,11 @@ export const PROJECTS: Project[] = [
     title: 'Track Study Project - AI Cover Song Video Generator',
     description: '🏆TrackStudy Project 2등 수상작: 음성 및 영상 생성 모델을 활용한 노래 커버 영상 제작 서비스',
     shortDescription: 'AI-powered cover song video generator',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
+    image: blueBG,
+    gallery: [
+      blueBG,
+      pinkBG
+    ],
     tags: ['Python', 'AI', 'Video Generation'],
     link: '/projects/5',
     featured: false,
@@ -148,7 +156,11 @@ export const PROJECTS: Project[] = [
     title: 'Done-Check',
     description: 'To-do Chrome extension service. Done? then check what you did!🌱🐾',
     shortDescription: 'Chrome extension for task tracking',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
+    image: blueBG,
+    gallery: [
+      blueBG,
+      pinkBG
+    ],
     tags: ['JavaScript', 'Chrome Extension'],
     link: '/projects/6',
     featured: false,
