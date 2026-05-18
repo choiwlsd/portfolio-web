@@ -15,9 +15,13 @@
 
 import Button from './Button';
 import { PORTFOLIO_META } from '@/../../shared/const';
-import FloatingBadge from './ui/floating-bagde';
-import FloatingIcon from './ui/floating-icon';
+import FloatingBadge from './ui/floating-badge';
 import { Camera, Film, Headphones, Clapperboard, Play } from 'lucide-react';
+import flowerimage from '../assets/flower.png';
+import laptopimage from '../assets/laptop.png';
+import headphoneimage from '../assets/headphone.png';
+import mouseimage from '../assets/mouse.png';
+import keyboardimage from '../assets/keyboard.png';
 
 export default function Hero() {
   return (
@@ -32,15 +36,15 @@ export default function Hero() {
           pt-6
         ">
           {/* intro */}
-        <div className="absolute left-8 top-14 max-w-[230px]">
+        <div className="absolute left-8 top-14 max-w-[350px]">
           <p className="text-[#2f6dff] font-medium italic text-base mb-3">
             Welcome to my Portfolio!
           </p>
 
           <p className="text-[30px] leading-[1.2] font-light">
-            I&apos;m <span className="font-bold underline">Jinyeong</span>, a
+            I&apos;m <span className="font-bold underline">Jinyeong</span>, a<br></br>
             Software and AI Engineer based in{" "}
-            <span className="font-bold underline">Seoul</span>
+            <span className="font-bold underline">Kyung Hee Univ</span>
             .
           </p>
         </div>
@@ -48,16 +52,6 @@ export default function Hero() {
         {/* main title */}
         <div className="flex flex-col items-center justify-center pt-12 select-none">
           <div className="relative">
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2">
-              <div className="w-20 h-20 rounded-[24px] bg-white shadow-2xl rotate-6 flex items-center justify-center">
-                <Play
-                  fill="#2f6dff"
-                  color="#2f6dff"
-                  size={32}
-                  className="translate-x-1"
-                />
-              </div>
-            </div>
 
             <h1 className="text-[120px] leading-[0.92] font-black tracking-[-0.08em] text-center">
               Try.
@@ -78,7 +72,7 @@ export default function Hero() {
         />
 
         <FloatingBadge
-          className="right-[24%] top-[44%] -rotate-3"
+          className="right-[22%] top-[45%] -rotate-3"
           text="Post - Production"
         />
 
@@ -93,35 +87,27 @@ export default function Hero() {
         />
 
         {/* icons */}
-        <div className="absolute left-[13%] top-[40%]">
-          <FloatingIcon>
-            <Headphones size={45} strokeWidth={1.7} />
-          </FloatingIcon>
+        <div className="absolute right-[28%] top-[28%]">
+          <img src={keyboardimage} alt="Keyboard" className='w-45 rotate-[12deg]' />
         </div>
 
-        <div className="absolute left-[18%] top-[67%]">
-          <FloatingIcon>
-            <Camera size={48} strokeWidth={1.7} />
-          </FloatingIcon>
+        <div className="absolute left-[18%] top-[40%]">
+          <img src={mouseimage} alt="Mouse" className='w-32 rotate-320'/>
         </div>
 
-        <div className="absolute right-[18%] top-[48%]">
-          <FloatingIcon>
-            <Film size={45} strokeWidth={1.7} />
-          </FloatingIcon>
+        <div className="absolute left-[18%] top-[63%]">
+          <img src={laptopimage} alt="Laptop" className='w-45  rotate-[8deg]'/>
         </div>
 
-        <div className="absolute right-[22%] top-[75%]">
-          <FloatingIcon>
-            <Clapperboard size={42} strokeWidth={1.7} />
-          </FloatingIcon>
+        <div className="absolute right-[18%] top-[50%] z-1">
+          <img src={headphoneimage} alt="Headphones" className='w-40 h-45 rotate-[-8deg]' />
         </div>
 
         {/* polaroid */}
         <div className="absolute right-[7%] top-[18%] rotate-[7deg]">
           <div className="bg-white p-3 shadow-2xl border border-neutral-200 w-[220px]">
             <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+              src={flowerimage}
               className="w-full h-62.5 object-cover"
             />
 
