@@ -20,6 +20,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
+import Strawberryimage from '../assets/strawberry.png';
 
 
 const Home = () => {
@@ -27,6 +28,11 @@ const Home = () => {
     <div className="min-h-screen bg-white">
       {/* Fixed Navigation */}
       <Navbar />
+
+      <img 
+            src={Strawberryimage} 
+            alt="Decorative" 
+            className="absolute w-50 h-60 top-250 right-10 z-20" />
 
       {/* Main Content */}
       <main className="pt-16 md:pt-20">

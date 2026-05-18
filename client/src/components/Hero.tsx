@@ -17,6 +17,9 @@ import Button from './Button';
 import { PORTFOLIO_META } from '@/../../shared/const';
 import OIimage from '../assets/favicon.png';
 import Baguetteimage from '../assets/baguette.png';
+import Barcodeimage from '../assets/barcode.png';
+import Basketimage from '../assets/basket.png';
+import Pastaimage from '../assets/pasta.png';
 
 export default function Hero() {
   return (
@@ -78,27 +81,27 @@ export default function Hero() {
           {/* Right Decorative Area */}
           <div className="hidden md:flex items-center justify-center relative h-96">
             {/* Decorative Elements */}
-            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative w-125 h-125">
               {/* Large Circle Background */}
               <div className="absolute w-72 h-72 bg-red-500 rounded-full opacity-20 blur-3xl z-0"></div>
 
-              <img src={OIimage} alt="Decorative" className="w-60 h-60 mb-4 z-10" />
-              <img src={Baguetteimage} alt="Decorative" className="w-80 h-80 mb-4 z-10" />
+              <img 
+                src={Baguetteimage} 
+                alt="Decorative" 
+                className="absolute w-80 h-80 bottom-80 z-20" />
+              <img 
+                src={Barcodeimage} 
+                alt="Decorative" 
+                className="absolute w-40 h-40 bottom-40 left-20 rotate-50 z-20" />
+              <img 
+                src={Basketimage} 
+                alt="Decorative" 
+                className="absolute w-100 h-70 mb-4 rotate-90 z-10" />
+              <img 
+                src={Pastaimage} 
+                alt="Decorative" 
+                className="absolute w-60 h-40 top-10 right-20 z-20" />
 
-              {/* Floating Box with Code */}
-              {/* <div className="relative z-10 bg-gray-900 text-white p-6 rounded-lg shadow-lg transform -rotate-6 max-w-xs">
-                <code className="text-sm font-mono">
-                  <div>const developer = {'{'}</div>
-                  <div className="ml-4">name: 'Dev Developer',</div>
-                  <div className="ml-4">skills: ['HTML', 'CSS', 'JavaScript'],</div>
-                  <div className="ml-4">passion: 'Building beautiful</div>
-                  <div className="ml-4">things for the web'</div>
-                  <div>{'}'}</div>
-                </code>
-              </div> */}
-
-              {/* Decorative Shapes */}
-              <div className="absolute bottom-10 left-0 w-25 h-25 bg-linear-to-r from-primary to-secondary rounded-full opacity-20"></div>
             </div>
           </div>
         </div>
