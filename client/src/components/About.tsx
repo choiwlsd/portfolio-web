@@ -27,11 +27,11 @@ export default function About() {
           <div
             className="
               absolute
-              -top-4
-              right-8
-              w-16
+              -top-1
+              right-1
+              w-20
               h-6
-              bg-[#5f8fff]
+              bg-[#59a8dc]
               rotate-[25deg]
               z-10
             "
@@ -74,7 +74,7 @@ export default function About() {
               tracking-tight
             "
           >
-            <span className="relative inline-block border-4 border-primary px-4 py-1 ml-2 font-serif mr-2">Jinyeong</span>
+            <span className="relative inline-block border-4 border-[#59a8dc] px-4 py-1 ml-2 font-serif mr-2">Jinyeong</span>
             Choi
 
           </h2>

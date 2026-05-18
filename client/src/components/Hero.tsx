@@ -38,17 +38,18 @@ export default function Hero() {
           </p>
 
           <p className="text-[30px] leading-[1.2] font-light">
-            I&apos;m <span className="font-bold underline">Monelo</span>, a
-            Designer and Content Creator based in{" "}
-            <span className="font-bold underline">Seoul.</span>
+            I&apos;m <span className="font-bold underline">Jinyeong</span>, a
+            Software and AI Engineer based in{" "}
+            <span className="font-bold underline">Seoul</span>
+            .
           </p>
         </div>
 
         {/* main title */}
         <div className="flex flex-col items-center justify-center pt-12 select-none">
           <div className="relative">
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2">
-              <div className="w-20 h-20 rounded-[24px] bg-black shadow-2xl rotate-6 flex items-center justify-center">
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2">
+              <div className="w-20 h-20 rounded-[24px] bg-white shadow-2xl rotate-6 flex items-center justify-center">
                 <Play
                   fill="#2f6dff"
                   color="#2f6dff"
@@ -59,13 +60,13 @@ export default function Hero() {
             </div>
 
             <h1 className="text-[120px] leading-[0.92] font-black tracking-[-0.08em] text-center">
-              Shoot.
+              Try.
               <br />
-              Edit.
+              Do.
               <br />
-              Deliver.
+              Collaborate.
               <br />
-              Repeat.
+              Develop.
             </h1>
           </div>
         </div>
@@ -125,8 +126,8 @@ export default function Hero() {
             />
 
             <div className="mt-3 flex justify-end">
-              <span className="bg-yellow-300 px-3 py-1 text-xs font-semibold rotate-[-2deg]">
-                monelo
+              <span className="bg-[#b4d7ee] px-3 py-1 text-xs font-semibold rotate-[-2deg]">
+                vibe
               </span>
             </div>
           </div>
@@ -135,14 +136,13 @@ export default function Hero() {
         {/* sticky note */}
         <div className="absolute right-[5%] bottom-[12%] rotate-[-5deg]">
           <div className="bg-[#f2e8d8] p-5 shadow-lg w-55">
-            <div className="absolute top-[-10px] left-10 w-24 h-6 bg-[#d6b78d]/70 rotate-[-2deg]" />
+            <div className="absolute top-[-10px] left-15 w-24 h-6 bg-[#d6b78d]/70 rotate-[-2deg]" />
 
-            <ul className="space-y-2 text-base font-medium text-neutral-700">
-              <li>— Graphic Design</li>
-              <li>— Photography</li>
-              <li>— Videography</li>
-              <li>— Branding</li>
-              <li>— Content Creation</li>
+            <ul className="space-y-2 text-base font-medium mt-2 text-neutral-700">
+              <li>— Computer Science</li>
+              <li>— AI Enthusiastic</li>
+              <li>— Data Analysis</li>
+              <li>— React: Web Developer</li>
             </ul>
           </div>
         </div>
