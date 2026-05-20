@@ -30,7 +30,7 @@ export default function AboutPage() {
       <main className="pt-32 pb-20">
         <div className="container">
           {/* Page Header */}
-          <div className="mb-16">
+          <div className="mb-16 ml-8">
             <p className="text-primary font-semibold text-lg mb-2">About me</p>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
               Jinyeong Choi<span className="text-primary">.</span>

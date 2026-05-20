@@ -75,9 +75,8 @@ export default function About() {
               tracking-tight
             "
           >
-            <span className="relative inline-block border-4 border-[#59a8dc] px-4 py-1 ml-2 font-serif mr-2">Jinyeong</span>
-            Choi
-
+            <span className="relative inline-block border-4 border-[#59a8dc] px-4 py-2 ml-2 mr-2">Jinyeong</span>
+            <span className="font-serif">Choi</span>
           </h2>
 
           {/* bio */}

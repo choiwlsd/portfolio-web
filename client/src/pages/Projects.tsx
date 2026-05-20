@@ -68,7 +68,7 @@ export default function ProjectsPage() {
       <main className="pt-32 pb-20">
         <div className="container">
           {/* Page Header */}
-          <div className="mb-16">
+          <div className="mb-16 ml-8">
             <p className="text-primary font-semibold text-lg mb-2">My Work</p>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
               All Projects<span className="text-primary">.</span>
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
             <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 ml-8">
 
             {/* Main Content - Projects Grid */}
             <div className="lg:col-span-3">
