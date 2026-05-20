@@ -35,7 +35,7 @@ export default function ProjectDetail() {
       <div className="min-h-screen bg-white">
         <Navbar />
         <div className="container py-32 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Project Not Found</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Project Not Found</h1>
           <a href="/projects" className="text-blue-600 font-semibold hover:underline">
             Back to Projects
           </a>
@@ -49,9 +49,9 @@ export default function ProjectDetail() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="pt-32 pb-20">
+      <main className="pt-27 pb-20">
         {/* Back Button */}
-        <div className="container mb-12">
+        <div className="container mb-5">
           <a
             href="/projects"
             className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all group"
@@ -105,7 +105,7 @@ export default function ProjectDetail() {
                       rel="noopener noreferrer"
                       className="text-blue-600 font-semibold hover:underline inline-flex items-center gap-1"
                     >
-                      Visit <ExternalLink size={16} />
+                      <ExternalLink size={16} />Visit 
                     </a>
                   </div>
                 )}
@@ -118,7 +118,7 @@ export default function ProjectDetail() {
                       rel="noopener noreferrer"
                       className="text-blue-600 font-semibold hover:underline inline-flex items-center gap-1"
                     >
-                      View <Github size={16} />
+                      <Github size={16} />View 
                     </a>
                   </div>
                 )}
