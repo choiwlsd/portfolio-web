@@ -9,6 +9,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { navigate } from "wouter/use-browser-location";
 import Milanimage from "@/assets/milan.jpg";
+import me from "@/assets/me.png"
 
 export default function About() {
   return (
@@ -23,20 +24,18 @@ export default function About() {
     >
       <div className="grid lg:grid-cols-2 gap-14 items-center">
         {/* image */}
-        <div className="relative">
-          {/* tape */}
-          <div
-            className="
-              absolute
-              -top-1
-              right-1
-              w-20
-              h-6
-              bg-[#59a8dc]
-              rotate-[25deg]
-              z-10
-            "
-          />
+        <div 
+          className="
+            relative
+            flex
+            justify-center
+            items-center
+            w-full
+            max-2-[520px]
+            mx-auto
+            aspect-[4/5]
+          "
+        >
 
           {/* polaroid */}
           <div
@@ -57,6 +56,20 @@ export default function About() {
               "
             />
           </div>
+
+          {/* floating image */}
+          <img 
+            src={me} 
+            alt="It's me"
+            className="
+              absolute
+              z-10
+              mb-8
+              w-[40%]
+              rotate-[-3deg]
+              object-cover
+            " 
+          />
         </div>
 
         {/* text */}
