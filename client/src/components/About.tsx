@@ -66,7 +66,7 @@ export default function About() {
               z-10
               mb-8
               w-[40%]
-              rotate-[-3deg]
+              rotate-[-2.5deg]
               object-cover
             " 
           />
