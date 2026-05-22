@@ -24,7 +24,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   { platform: 'github', url: 'https://github.com/choiwlsd', icon: 'Github' },
   { platform: 'blog', url: 'https://oiblog.tistory.com/', icon: 'BookOpen' },
-  { platform: 'linkedin', url: 'https://linkedin.com/in/choiwlsd', icon: 'Linkedin' },
+  { platform: 'linkedin', url: 'www.linkedin.com/in/jinyeong-choi-oo88o1245689', icon: 'Linkedin' },
   { platform: 'instagram', url: 'https://instagram.com/_oiwlsx', icon: 'Instagram' },
   { platform: 'email', url: 'mailto:choiwlsd@gmail.com', icon: 'Mail' },
 ];
