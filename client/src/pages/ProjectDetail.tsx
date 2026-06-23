@@ -139,7 +139,7 @@ export default function ProjectDetail() {
             <div className="overflow-hidden rounded-lg border border-neutral-300 bg-white p-2 shadow-xl">
               <button
                 onClick={openDemo}
-                className="group relative block h-[360px] w-full overflow-hidden bg-neutral-100 text-left md:h-[450px]"
+                className="group relative block h-90 w-full overflow-hidden bg-neutral-100 text-left md:h-112.5"
               >
                 <img src={project.image} alt={project.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                 <span className="absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-black shadow-xl">
