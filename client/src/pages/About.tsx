@@ -145,8 +145,8 @@ export default function AboutPage() {
             <div className="relative rotate-2 border border-neutral-200 bg-white p-4 shadow-xl">
               <img src={me} alt="Jinyeong Choi" className="h-105 w-full object-cover grayscale" />
             </div>
-            <span className="absolute -left-8 top-28 hidden text-5xl text-[#0868ff] md:block">♡</span>
-            <span className="absolute -left-2 top-44 hidden text-3xl text-[#0868ff] md:block">♡</span>
+            <span className="absolute -left-8 top-28 hidden text-5xl text-[#0868ff] md:block">♥</span>
+            <span className="absolute -left-2 top-44 hidden text-3xl text-[#0868ff] md:block">♥</span>
           </div>
         </section>
 
