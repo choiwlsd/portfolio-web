@@ -137,7 +137,7 @@ export default function Hero() {
           <p className="text-2xl leading-snug font-light italic">
             Ready to challenge
             <br />
-            effectively
+            innovatively
           </p>
 
           <button className="mt-5 border-[3px] border-[#2f6dff] text-[#2f6dff] px-6 py-2 rounded-full text-2xl font-semibold italic hover:bg-[#2f6dff] hover:text-white transition">
