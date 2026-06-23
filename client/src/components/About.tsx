@@ -16,7 +16,7 @@ export default function About() {
     <section
       id="about"
       className="
-        max-w-[1500px]
+        max-w-375
         mx-auto
         px-8
         py-24
@@ -33,7 +33,7 @@ export default function About() {
             w-full
             max-2-[520px]
             mx-auto
-            aspect-[4/5]
+            aspect-4/5
           "
         >
 
@@ -42,7 +42,7 @@ export default function About() {
             className="
               bg-white
               p-4
-              rotate-[-3deg]
+              -rotate-3
               shadow-[0_25px_60px_rgba(0,0,0,0.12)]
             "
           >
@@ -51,7 +51,7 @@ export default function About() {
               alt="Jinyeong Choi"
               className="
                 w-full
-                h-[420px]
+                h-105
                 object-cover
               "
             />
@@ -99,7 +99,7 @@ export default function About() {
               text-neutral-600
               text-lg
               leading-relaxed
-              max-w-[650px]
+              max-w-162.5
             "
           >
             I&apos;m a Front-End Developer who loves

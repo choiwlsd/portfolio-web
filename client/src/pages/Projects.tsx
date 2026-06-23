@@ -1,244 +1,160 @@
-/**
- * Projects Page Component
- * 
- * Displays all projects with:
- * - Filter sidebar (by category, technology)
- * - Project grid with pagination
- * - Search functionality
- * 
- * Design: Clean layout with left sidebar for filters
- */
+import { ArrowDown, ArrowRight } from "lucide-react";
+import { useMemo, useState } from "react";
+import { useLocation } from "wouter";
+import { PROJECTS } from "@/../../shared/const";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-import { useState, useMemo } from 'react';
-import { useLocation } from 'wouter';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { PROJECTS } from '@/../../shared/const';
-import type { Project } from '@/../../shared/types';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Button from '@/components/Button';
-
-// Projects per page
-const ITEMS_PER_PAGE = 6;
+const categories = ["All", "Web", "AI", "UI/UX", "Others"];
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedTech, setSelectedTech] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const [, setLocation] = useLocation();
 
-  // Get unique categories and technologies
-  const categories = useMemo(() => {
-    const cats = new Set(PROJECTS.map(p => p.category).filter(Boolean) as string[]);
-    return Array.from(cats) as string[];
-  }, []);
+  const itemsPerPage = 6;
 
-  const technologies = useMemo(() => {
-    const techs = new Set<string>();
-    PROJECTS.forEach(p => {
-      p.technologies?.forEach(t => techs.add(t));
-    });
-    return Array.from(techs);
-  }, []);
-
-  // Filter projects
   const filteredProjects = useMemo(() => {
-    return PROJECTS.filter(project => {
-      const categoryMatch = !selectedCategory || project.category === selectedCategory;
-      const techMatch = !selectedTech || project.technologies?.includes(selectedTech);
-      return categoryMatch && techMatch;
+    return PROJECTS.filter((project) => {
+      if (activeCategory === "All") return true;
+      return project.category === activeCategory;
     });
-  }, [selectedCategory, selectedTech]);
+  }, [activeCategory]);
 
-  // Paginate
-  const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
-  const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginatedProjects = filteredProjects.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 
-  // Reset to page 1 when filters change
-  const handleFilterChange = (callback: () => void) => {
-    setCurrentPage(1);
-    callback();
-  };
+  const paginatedProjects = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return filteredProjects.slice(start, start + itemsPerPage);
+  }, [filteredProjects, currentPage]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen text-black">
       <Navbar />
 
-      <main className="pt-32 pb-20">
-        <div className="container">
-          {/* Page Header */}
-          <div className="mb-16 ml-8">
-            <p className="text-primary font-semibold text-lg mb-2">My Work</p>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-              All Projects<span className="text-primary">.</span>
-            </h1>
-            <p className="text-xl text-gray-600 italic mb-4">Ideas. Code. Design. Results.</p>
-            <div className="h-1 w-24 bg-primary rounded-full"></div>
+      <main className="px-6 pb-6 pt-12 md:px-10">
+        {/* Header */}
+        <section className="relative pt-10 md:pt-16">
+          <p className="text-xl italic text-[#0868ff]" style={{ fontFamily: "cursive" }}>
+            Things I've built
+          </p>
+
+          <h1 className="mt-3 text-7xl font-black">
+            Projects.
+          </h1>
+
+          <div className="h-2 w-68 -rotate-2 bg-[#0868ff]" />
+
+          <p className="mt-7 max-w-md text-lg leading-8">
+            A collection of selected work that solves problems, creates impact, and delivers value.
+          </p>
+        </section>
+
+        {/* Filters */}
+        <section className="mt-12 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setCurrentPage(1);
+                }}
+                className={`h-11 min-w-20 rounded-lg px-5 text-sm font-bold transition ${
+                  activeCategory === category
+                    ? "bg-[#0868ff] text-white"
+                    : "bg-neutral-100 hover:bg-neutral-200"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 ml-8">
+          <select className="h-11 w-36 rounded-lg border border-neutral-300 bg-white px-4 text-sm font-bold outline-none">
+            <option>Latest</option>
+            <option>Featured</option>
+            <option>A-Z</option>
+          </select>
+        </section>
 
-            {/* Main Content - Projects Grid */}
-            <div className="lg:col-span-3">
-              {/* Projects Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                {paginatedProjects.map(project => (
-                  <div
-                    key={project.id}
-                    className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                    onClick={() => setLocation(`/projects/${project.id}`)}
-                  >
-                    {/* Project Image */}
-                    <div className="relative h-60 overflow-hidden bg-gray-200">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
+        {/* Projects Grid */}
+        <section className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {paginatedProjects.map((project) => (
+            <article
+              key={project.id}
+              className="group overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <button
+                onClick={() => setLocation(`/projects/${project.id}`)}
+                className="flex h-full w-full flex-col text-left"
+              >
+                {/* Image */}
+                <div className="relative h-60 overflow-hidden bg-neutral-100">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
 
-                    {/* Project Content */}
-                    <div className="p-6">
-                      {/* Category Badge */}
-                      {project.category && (
-                        <span className="inline-block px-3 py-1 border border-primary text-primary text-xs font-bold rounded-full mb-3 capitalize">
-                          {project.category.replace(/-/g, ' ')}
-                        </span>
-                      )}
+                  <span className="absolute left-4 top-4 rounded bg-white/85 px-3 py-1 text-xs font-bold text-black outline-1 outline-black/10">
+                    {project.category}
+                  </span>
+                </div>
 
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-5">
+                  <h2 className="text-xl font-black">
+                    {project.title}
+                  </h2>
 
-                      {/* Description */}
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                        {project.description}
-                      </p>
+                  <p className="mt-3 text-sm leading-6 text-neutral-700">
+                    {project.shortDescription ?? project.description}
+                  </p>
 
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.map((tag, idx) => (
-                          <span
-                            key={idx}
-                            className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* View Project Link */}
-                      <a
-                        href={project.link}
-                        className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
+                  {/* Tags */}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded bg-neutral-100 px-3 py-1 text-xs text-neutral-600"
                       >
-                        View Project
-                        <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-4">
-                  <button
-                    onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                    disabled={currentPage === 1}
-                    className="p-2 rounded-lg border border-gray-200 hover:border-primary hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-
-                  <div className="flex gap-2">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                      <button
-                        key={page}
-                        onClick={() => setCurrentPage(page)}
-                        className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
-                          currentPage === page
-                            ? 'bg-primary text-white'
-                            : 'border border-gray-200 text-gray-900 hover:border-primary'
-                        }`}
-                      >
-                        {page}
-                      </button>
+                        {tag}
+                      </span>
                     ))}
                   </div>
 
-                  <button
-                    onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                    disabled={currentPage === totalPages}
-                    className="p-2 rounded-lg border border-gray-200 hover:border-primary hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                </div>
-              )}
-            </div>
+                  <div className="mt-auto flex items-center justify-between pt-5">
+                    <span className="text-sm font-bold text-black">
+                      {project.year}
+                    </span>
 
-            {/* Sidebar - Filters */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-32 space-y-8">
-                {/* Category Filter */}
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase">Filter</h3>
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => handleFilterChange(() => setSelectedCategory(null))}
-                      className={`block text-sm font-medium transition-colors ${
-                        !selectedCategory
-                          ? 'text-primary'
-                          : 'text-gray-600 hover:text-gray-900'
-                      }`}
-                    >
-                      All Projects <span className="text-gray-400">({PROJECTS.length})</span>
-                    </button>
-                    {(categories as string[]).map((cat: string) => {
-                      const count = PROJECTS.filter(p => p.category === cat).length;
-                      return (
-                        <button
-                          key={cat}
-                          onClick={() => handleFilterChange(() => setSelectedCategory(cat))}
-                          className={`block text-sm font-medium transition-colors capitalize ${
-                            selectedCategory === cat
-                              ? 'text-blue-600'
-                              : 'text-gray-600 hover:text-gray-900'
-                          }`}
-                        >
-                          {cat?.replace(/-/g, ' ')} <span className="text-gray-400">({count})</span>
-                        </button>
-                      );
-                    })}
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
                   </div>
                 </div>
+              </button>
+            </article>
+          ))}
+        </section>
 
-                {/* Technology Filter */}
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase">Technology</h3>
-                  <div className="space-y-2">
-                    {technologies.map(tech => (
-                      <button
-                        key={tech}
-                        onClick={() => handleFilterChange(() => setSelectedTech(tech))}
-                        className={`block text-sm font-medium transition-colors ${
-                          selectedTech === tech
-                            ? 'text-blue-600'
-                            : 'text-gray-600 hover:text-gray-900'
-                        }`}
-                      >
-                        {tech}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Dot Pagination */}
+        <section className="mt-15 flex justify-center gap-2">
+          {Array.from({ length: totalPages }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentPage(idx + 1)}
+              className={`h-2.5 w-2.5 rounded-full transition-all ${
+                currentPage === idx + 1
+                  ? "bg-[#0868ff] scale-125"
+                  : "bg-neutral-300 hover:bg-neutral-400"
+              }`}
+              aria-label={`Go to page ${idx + 1}`}
+            />
+          ))}
+        </section>
       </main>
 
       <Footer />

@@ -13,10 +13,19 @@ export interface Project {
   shortDescription?: string;
   image: string;
   gallery?: string[];
+  presentationSlides?: string[];
+  techStackImage?: string;
+  demoMedia?: {
+    type: 'image' | 'video';
+    src: string;
+    title?: string;
+    poster?: string;
+  }[];
   tags: string[];
   link: string;
+  year: string;
   featured?: boolean;
-  category?: 'web-development' | 'mobile-app' | 'ui-ux-design' | 'personal';
+  category?: 'Web' | 'AI' | 'UI/UX' | 'Others';
   duration?: string;
   team?: string[];
   technologies?: string[];

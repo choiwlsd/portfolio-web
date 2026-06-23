@@ -28,14 +28,14 @@ export default function Hero() {
       <div
         className="
           relative
-          w-[1440px]
+          w-360
           mx-auto
-          min-h-[820px]
+          min-h-205
           px-8
           pt-6
         ">
           {/* intro */}
-        <div className="absolute left-8 top-14 max-w-[350px]">
+        <div className="absolute left-8 top-14 max-w-87.5">
           <p className="text-[#2f6dff] font-medium italic text-base mb-3">
             Welcome to my Portfolio!
           </p>
@@ -87,7 +87,7 @@ export default function Hero() {
 
         {/* icons */}
         <div className="absolute right-[28%] top-[28%]">
-          <img src={keyboardimage} alt="Keyboard" className='w-45 rotate-[12deg]' />
+          <img src={keyboardimage} alt="Keyboard" className='w-45 rotate-12' />
         </div>
 
         <div className="absolute left-[18%] top-[40%]">
@@ -104,14 +104,14 @@ export default function Hero() {
 
         {/* polaroid */}
         <div className="absolute right-[7%] top-[18%] rotate-[7deg]">
-          <div className="bg-white p-3 shadow-2xl border border-neutral-200 w-[220px]">
+          <div className="bg-white p-3 shadow-2xl border border-neutral-200 w-55">
             <img
               src={flowerimage}
               className="w-full h-62.5 object-cover"
             />
 
             <div className="mt-3 flex justify-end">
-              <span className="bg-[#b4d7ee] px-3 py-1 text-xs font-semibold rotate-[-2deg]">
+              <span className="bg-[#b4d7ee] px-3 py-1 text-xs font-semibold -rotate-2">
                 vibe
               </span>
             </div>
@@ -121,7 +121,7 @@ export default function Hero() {
         {/* sticky note */}
         <div className="absolute right-[5%] bottom-[12%] rotate-[-5deg]">
           <div className="bg-[#f2e8d8] p-5 shadow-lg w-55">
-            <div className="absolute top-[-10px] left-15 w-24 h-6 bg-[#d6b78d]/70 rotate-[-2deg]" />
+            <div className="absolute -top-2.5 left-15 w-24 h-6 bg-[#d6b78d]/70 -rotate-2" />
 
             <ul className="space-y-2 text-base font-medium mt-2 text-neutral-700">
               <li>— Computer Science</li>
@@ -133,7 +133,7 @@ export default function Hero() {
         </div>
 
         {/* handwriting */}
-        <div className="absolute left-[4%] bottom-[21%] rotate-[-6deg]">
+        <div className="absolute left-[4%] bottom-[21%] -rotate-6">
           <p className="text-2xl leading-snug font-light italic">
             Ready to challenge
             <br />
