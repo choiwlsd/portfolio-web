@@ -102,7 +102,7 @@ const beliefs = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#fbfbfa] text-black">
+    <div className="min-h-screen bg-white text-black">
       <Navbar />
 
       <main className="px-5 pb-12 pt-28 md:px-10">
