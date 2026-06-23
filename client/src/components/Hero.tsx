@@ -16,7 +16,6 @@
 import Button from './Button';
 import { PORTFOLIO_META } from '@/../../shared/const';
 import FloatingBadge from './ui/floating-badge';
-import { Camera, Film, Headphones, Clapperboard, Play } from 'lucide-react';
 import flowerimage from '../assets/flower.png';
 import laptopimage from '../assets/laptop.png';
 import headphoneimage from '../assets/headphone.png';
@@ -67,23 +66,23 @@ export default function Hero() {
 
         {/* floating badges */}
         <FloatingBadge
-          className="left-[18%] top-[29%] rotate-6"
-          text="Studio & On-Location Shoots"
+          className="left-[19%] top-[28%] rotate-3"
+          text="Tackling Challenges"
         />
 
         <FloatingBadge
           className="right-[22%] top-[45%] -rotate-3"
-          text="Post - Production"
+          text="Leadership"
         />
 
         <FloatingBadge
-          className="left-[22%] top-[58%] rotate-3"
-          text="High - Quality Production"
+          className="left-[25%] top-[58%] rotate-4"
+          text="Passionate"
         />
 
         <FloatingBadge
-          className="left-[47%] top-[73%] rotate-2"
-          text="Reel Shoots"
+          className="left-[47%] top-[68%] -rotate-2"
+          text="Insight-Driven · Results-Oriented"
         />
 
         {/* icons */}
@@ -136,13 +135,13 @@ export default function Hero() {
         {/* handwriting */}
         <div className="absolute left-[4%] bottom-[21%] rotate-[-6deg]">
           <p className="text-2xl leading-snug font-light italic">
-            Ready to make your
+            Ready to challenge
             <br />
-            Brands Unforgettable
+            effectively
           </p>
 
           <button className="mt-5 border-[3px] border-[#2f6dff] text-[#2f6dff] px-6 py-2 rounded-full text-2xl font-semibold italic hover:bg-[#2f6dff] hover:text-white transition">
-            Let&apos;s Roll!
+            Let&apos;s GO!
           </button>
         </div>
       </div>
